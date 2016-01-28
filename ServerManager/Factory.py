@@ -7,7 +7,7 @@ class Factory():
 	def getResult(self, component, message, device_id):
 		if   component == "search":
 			pass
-		elif component == "find":
+		elif component == "location":
 			pass
 		else:
 			pass
