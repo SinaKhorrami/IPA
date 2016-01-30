@@ -11,6 +11,7 @@ def index():
 		[message]   : content of user speech changed to text
 		[device_id] : device id of client (unique)
 	'''
+	print("nice")
 	factory = Factory()
 	component = request.json["component"]
 	device_id = request.json["device_id"]
@@ -19,4 +20,4 @@ def index():
 	return jsonify(result), 200
 
 if __name__ == '__main__':
-	app.run()
+	app.run(host='0.0.0.0')
