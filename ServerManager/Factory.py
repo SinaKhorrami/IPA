@@ -15,7 +15,8 @@ class Factory():
 			obj = Search(message)
 			self.result["results"] = obj.searching()
 		elif component == "location":
-			pass
+			obj = Location_finder(message)
+			self.result = obj.find()
 		else:
 			pass
 		
