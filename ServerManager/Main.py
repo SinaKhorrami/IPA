@@ -11,7 +11,6 @@ def index():
 		[message]   : content of user speech changed to text
 		[device_id] : device id of client (unique)
 	'''
-	print("nice")
 	factory = Factory()
 	component = request.json["component"]
 	device_id = request.json["device_id"]

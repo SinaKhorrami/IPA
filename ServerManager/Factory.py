@@ -1,7 +1,7 @@
 import os, sys
 
 sys.path.append(os.path.abspath("../SearchManager/"))
-sys.path.append(os.path.abspath("../locationFinder/"))
+sys.path.append(os.path.abspath("../LocationFinder/"))
 
 from Search import Search
 from Location import Location_finder
