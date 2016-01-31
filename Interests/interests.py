@@ -3,11 +3,16 @@ import xml.etree.ElementTree as ET
 class Interests:
     
     def __init__(self,a_id):
+        print("@8")
         self.id = a_id
         self.dic = {}
+        print("@9")
         tree = ET.parse("data.xml")
+        print("@10")
         self.root = tree.getroot()
+        print("@11")
         self.setUser()
+        print("@12")
         
     def setUser(self):
         flag = False
@@ -42,6 +47,7 @@ class Interests:
                     tree.write("data.xml")
                     break
     def getInterests(self):
+        print("@13")
         for user in self.root:
             if user.attrib['id'] == self.id:
                 for type_ in user:
