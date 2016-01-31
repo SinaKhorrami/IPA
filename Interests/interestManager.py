@@ -3,7 +3,6 @@ from interests import *
 
 class InterestManager():
     def __init__(self, data, a_id):
-	print(data)
         self.data = data
         self.userInterests = Interests(a_id).getInterests()
         self.interests = ['sports', 'news', 'travel', 'food and drinks', 'events', 'places', 
@@ -12,7 +11,9 @@ class InterestManager():
         self.spl = data.split()
         self.new_data = ""
         if ("search" in self.spl):
+            print(self.data)
             self.searchBasedOnInterests()
+            print(self.new_data)
         else:
             print ("Not Found!")
         
