@@ -3,10 +3,11 @@ import xml.etree.ElementTree as ET
 class Interests:
     
     def __init__(self,a_id):
-        self.id = a_id
+        self.path = "../Interests/data.xml"
+	self.id = a_id
         self.dic = {}
         try:
-            tree = ET.parse("../Interests/data.xml")
+            tree = ET.parse(self.path)
         except IOError as e:
             print(e.errno)
             print(e.strerror)
@@ -23,7 +24,7 @@ class Interests:
             new_user = ET.Element('user', {'id' : self.id})
             self.root.append(new_user)
             tree= ET.ElementTree(self.root)
-            tree.write("data.xml")
+            tree.write(self.path)
                 
     def setInterests(self, data):
         data = dict((k.lower(), v) for k,v in data.iteritems())
@@ -36,14 +37,14 @@ class Interests:
                         new_child = ET.Element('value', {'value': list(data.values())[0]})
                         type_.append(new_child)
                         tree = ET.ElementTree(self.root)
-                        tree.write("data.xml")
+                        tree.write(self.path)
                 if(flag == False):
                     new_child = ET.Element('value', {'value': list(data.values())[0]})
                     new_element =  ET.Element('type', {'title' : list(data.keys())[0]})
                     new_element.append(new_child)
                     user.append(new_element)
                     tree = ET.ElementTree(self.root)
-                    tree.write("data.xml")
+                    tree.write(self.path)
                     break
     def getInterests(self):
         for user in self.root:
@@ -69,7 +70,7 @@ class Interests:
                         if len(type_) == 0:
                             user.remove(type_)
                         tree = ET.ElementTree(self.root)
-                        tree.write("data.xml")
+                        tree.write(self.path)
 
 
 #user = Interests("1247")
