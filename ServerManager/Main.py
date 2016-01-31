@@ -28,7 +28,7 @@ def setInterest():
 	'''
 	device_id = request.json["id"]
 	rq = {}
-	rq['cat'] = request.json['cat']
+	rq['cat'] = request.json['cat'].lower()
 	rq['val'] = request.json['val']
 	print(rq)
 	obj = Interests(device_id)
