@@ -12,7 +12,6 @@ class InterestManager():
         self.new_data = ""
         if ("search" in self.spl):
             self.searchBasedOnInterests()
-            return self.new_data
         else:
             print ("Not Found!")
         
