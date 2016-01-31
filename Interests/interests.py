@@ -9,8 +9,9 @@ class Interests:
         print("@9")
         try:
             tree = ET.parse("data.xml")
-        except IOError:
-            print("!!!!")
+        except IOError, e:
+            print(e.errno)
+            print(e)
         print("@10")
         self.root = tree.getroot()
         print("@11")
