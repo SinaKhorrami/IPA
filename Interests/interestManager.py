@@ -3,14 +3,20 @@ from interests import *
 
 class InterestManager():
     def __init__(self, data, a_id):
-        print("@@@@")
+        print("@1")
         self.data = data
+        print("@2")
         self.userInterests = Interests(a_id).getInterests()
+        print("@3")
         self.interests = ['sports', 'news', 'travel', 'food and drinks', 'events', 'places', 
                           'movies and tv', 'music']
+        print("@4")
         self.data = data.lower()
+        print("@5")
         self.spl = data.split()
+        print("@6")
         self.new_data = ""
+        print("@7")
         if ("search" in self.spl):
             print(self.data)
             self.searchBasedOnInterests()
