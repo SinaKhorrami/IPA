@@ -7,7 +7,10 @@ class Interests:
         self.id = a_id
         self.dic = {}
         print("@9")
-        tree = ET.parse("data.xml")
+        try:
+            tree = ET.parse("data.xml")
+        except IOError:
+            print("!!!!")
         print("@10")
         self.root = tree.getroot()
         print("@11")
