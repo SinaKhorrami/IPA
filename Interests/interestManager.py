@@ -19,9 +19,11 @@ class InterestManager():
         for word in self.spl:
             for interest in self.interests:
                 if word in interest:
+                    print("!!")
                     try :
                         for i in list(self.userInterests.keys()):
                             if (word in i):
+                                print("!!!!")
                                 self.new_data = self.data.replace(word, self.userInterests[i][0])
                     except KeyError:
                         print ("OK!")
