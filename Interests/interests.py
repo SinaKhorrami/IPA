@@ -3,20 +3,15 @@ import xml.etree.ElementTree as ET
 class Interests:
     
     def __init__(self,a_id):
-        print("@8")
         self.id = a_id
         self.dic = {}
-        print("@9")
         try:
             tree = ET.parse("../Interests/data.xml")
         except IOError as e:
             print(e.errno)
             print(e.strerror)
-        print("@10")
         self.root = tree.getroot()
-        print("@11")
         self.setUser()
-        print("@12")
         
     def setUser(self):
         flag = False
@@ -51,7 +46,6 @@ class Interests:
                     tree.write("data.xml")
                     break
     def getInterests(self):
-        print("@13")
         for user in self.root:
             if user.attrib['id'] == self.id:
                 for type_ in user:
@@ -59,7 +53,7 @@ class Interests:
                     self.dic[attr]= []
                     for value in type_:
                         self.dic[attr].append(value.attrib['value'])
-        #return (self.dic)
+        return (self.dic)
         
     def deleteInterests(self, data):
         data = dict((k.lower(), v) for k,v in data.iteritems())
