@@ -30,6 +30,7 @@ def setInterest():
 	rq = {}
 	rq['cat'] = request.json['cat']
 	rq['val'] = request.json['val']
+	print(rq)
 	obj = Interests(device_id)
 	obj.setInterests(rq)
 	return jsonify({}), 200
