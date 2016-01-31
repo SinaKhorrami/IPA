@@ -3,6 +3,7 @@ from interests import *
 
 class InterestManager():
     def __init__(self, data, a_id):
+        print("@@@@")
         self.data = data
         self.userInterests = Interests(a_id).getInterests()
         self.interests = ['sports', 'news', 'travel', 'food and drinks', 'events', 'places', 
