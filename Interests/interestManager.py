@@ -22,6 +22,8 @@ class InterestManager():
                     print("!!")
                     try :
                         for i in list(self.userInterests.keys()):
+                            print(i)
+                            print(word)
                             if (word in i):
                                 print("!!!!")
                                 self.new_data = self.data.replace(word, self.userInterests[i][0])
