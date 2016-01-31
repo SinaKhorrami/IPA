@@ -8,10 +8,10 @@ class Interests:
         self.dic = {}
         print("@9")
         try:
-            tree = ET.parse("data.xml")
-        except IOError, e:
+            tree = ET.parse("../Interests/data.xml")
+        except IOError as e:
             print(e.errno)
-            print(e)
+            print(e.strerror)
         print("@10")
         self.root = tree.getroot()
         print("@11")
