@@ -5,8 +5,8 @@ class InterestManager():
     def __init__(self, data, a_id):
         self.data = data
         self.userInterests = Interests(a_id).getInterests()
-        self.interests = ['sports', 'news', 'travel', 'food and drinks', 'events', 'places', 
-                          'movies and tv', 'music']
+        self.interests = ['sports', 'news', 'travel', 'foods & drinks', 'events', 'places', 
+                          'movies & tv', 'musics']
         self.data = data.lower()
         self.spl = data.split()
         self.new_data = self.data
@@ -19,13 +19,9 @@ class InterestManager():
         for word in self.spl:
             for interest in self.interests:
                 if word in interest:
-                    print("!!")
                     try :
                         for i in list(self.userInterests.keys()):
-                            print(i)
-                            print(word)
                             if (word in i):
-                                print("!!!!")
                                 self.new_data = self.data.replace(word, self.userInterests[i][0])
                     except KeyError:
                         print ("OK!")
