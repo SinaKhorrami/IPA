@@ -15,9 +15,8 @@ class Factory():
 	def getResult(self, component, message, device_id):
 		if   component == "search":
 			obj1 = InterestManager(message, device_id)
-			obj2 = Search(obj1)
-			print(obj1, obj2)
-			self.result["results"] = obj.searching()
+			print(obj1.new_data)
+			#self.result["results"] = obj.searching()
 		elif component == "location":
 			obj = Location_finder(message)
 			self.result = obj.find()
