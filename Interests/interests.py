@@ -49,7 +49,7 @@ class Interests:
                     self.dic[attr]= []
                     for value in type_:
                         self.dic[attr].append(value.attrib['value'])
-        return (self.dic)
+        #return (self.dic)
         
     def deleteInterests(self, data):
         data = dict((k.lower(), v) for k,v in data.iteritems())

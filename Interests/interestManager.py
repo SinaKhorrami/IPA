@@ -6,7 +6,10 @@ class InterestManager():
         print("@1")
         self.data = data
         print("@2")
-        self.userInterests = Interests(a_id).getInterests()
+        #self.userInterests = Interests(a_id).getInterests()
+        self.userInterests = Interests(a_id)
+        self.userInterests.getInterests()
+        self.userInterests = self.userInterests.dic
         print("@3")
         self.interests = ['sports', 'news', 'travel', 'food and drinks', 'events', 'places', 
                           'movies and tv', 'music']
