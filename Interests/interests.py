@@ -27,20 +27,20 @@ class Interests:
             tree.write(self.path)
                 
     def setInterests(self, data):
-        data = dict((k.lower(), v) for k,v in data.iteritems())
+        data = dict((k.lower(), v) for k,v in data.items())
         flag = False
         for user in self.root:
             if user.attrib['id'] == self.id:
                 for type_ in user:
-                    if(type_.attrib['title'] == list(data.keys())[0]):
+                    if type_.attrib['title'] == data['cat']:
                         flag = True
-                        new_child = ET.Element('value', {'value': list(data.values())[0]})
+                        new_child = ET.Element('value', {'value': data['val']})
                         type_.append(new_child)
                         tree = ET.ElementTree(self.root)
                         tree.write(self.path)
                 if(flag == False):
-                    new_child = ET.Element('value', {'value': list(data.values())[0]})
-                    new_element =  ET.Element('type', {'title' : list(data.keys())[0]})
+                    new_child = ET.Element('value', {'value': data['val']})
+                    new_element =  ET.Element('type', {'title' : data['cat']})
                     new_element.append(new_child)
                     user.append(new_element)
                     tree = ET.ElementTree(self.root)
@@ -57,14 +57,14 @@ class Interests:
         return (self.dic)
         
     def deleteInterests(self, data):
-        data = dict((k.lower(), v) for k,v in data.iteritems())
+        data = dict((k.lower(), v) for k,v in data.items())
         flag = False
         for user in self.root:
             if (user.attrib['id'] == self.id) and flag == False:
                 for type_ in user:
-                    if (type_.attrib['title'] == list(data.keys())[0]) and flag == False:
+                    if (type_.attrib['title'] == data['cat']) and flag == False:
                         for value in type_:
-                            if (value.attrib['value'] == list(data.values())[0]) and flag == False:
+                            if (value.attrib['value'] == data['val']) and flag == False:
                                 type_.remove(value)
                                 flag = True
                         if len(type_) == 0:
@@ -75,5 +75,7 @@ class Interests:
 
 #user = Interests("1247")
 #user.getInterests()
-#data = {"Movie" : "A Seperation"}
+#data = {"cat" : "A S", "val" : "sad"}
+#user.setInterests(data)
 #user.deleteInterests(data)
+
