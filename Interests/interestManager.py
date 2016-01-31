@@ -9,7 +9,7 @@ class InterestManager():
                           'movies and tv', 'music']
         self.data = data.lower()
         self.spl = data.split()
-        self.new_data = ""
+        self.new_data = self.data
         if ("search" in self.spl):
             self.searchBasedOnInterests()
         else:
